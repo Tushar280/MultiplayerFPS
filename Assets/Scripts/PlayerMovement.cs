@@ -23,6 +23,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
+        OnGround();  
+    }
+
+    void OnJump()
+    {   
+        if (isGrounded) 
+        {
+            rb.AddForce(new Vector3(0,jumpForce,0), ForceMode.Impulse);
+        }
+    }
+
+    public void OnGround()
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
     }
 }
