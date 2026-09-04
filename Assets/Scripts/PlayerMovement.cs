@@ -26,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
         OnGround();  
     }
 
+    private void FixedUpdate()
+    {
+        MovePlayer();
+    }
+
     void OnJump()
     {   
         if (isGrounded) 
@@ -37,5 +42,17 @@ public class PlayerMovement : MonoBehaviour
     public void OnGround()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+    }
+
+    void OnMovement(InputValue value)
+    {
+        moveInput = value.ReadValue<Vector2>();
+    }
+
+    void MovePlayer()
+    {
+        Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
+        direction.Normalize();
+        rb.linearVelocity = new Vector3(direction.x * moveSpeed, rb.linearVelocity.y, direction.z * moveSpeed);
     }
 }
