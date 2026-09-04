@@ -291,7 +291,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 100
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -590,6 +590,7 @@ GameObject:
   - component: {fileID: 1251489095}
   - component: {fileID: 1251489096}
   - component: {fileID: 1251489097}
+  - component: {fileID: 1251489098}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -734,7 +735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
   m_Actions: {fileID: -944628639613478452, guid: e9f4dba951ebec342a43ab338fefa2f0, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 1
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -770,6 +771,20 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1251489098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251489090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db6cf32e34d81b4bb6d104baed7adb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Look
+  mouseSensitivity: 10.9
+  cam: {fileID: 330585546}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
